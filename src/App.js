@@ -1,23 +1,29 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
+
+  const searchMovie = async (title) => {
+    let response = await fetch(`https://omdbapi.com/?s=${title}&apikey=784a9d41`);
+    let data = await response.json();
+    console.log(data);
+    setMovie(data);
+  }
+
+  const [movie, setMovie] = useState(null);
+
+  useEffect(() => {
+    searchMovie('spiderman');
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <form>
+        <div className="input-group mt-5">
+          <input type="text" className="form-control" placeholder="Avatar" />
+          <button className='btn btn-info' type='submit'><i class="fa fa-search"></i></button>
+        </div>
+      </form>
     </div>
   );
 }

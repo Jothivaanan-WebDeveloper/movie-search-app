@@ -1,0 +1,31 @@
+.App {
+  text-align: center;
+}
+
+.App-header {
+  background-color: #282c34;
+}
+
+body {
+  background-color: #6c84b4;
+}
+
+input {
+  caret-color: rgb(227, 179, 179);
+}
+
+.input-group {
+  margin: auto;
+  width: 60%;
+}
+
+input[type="text"] {
+  box-shadow:none !important;
+  border:1px solid #ccc !important;
+}
+
+.fa {
+  color: white;
+}
+
+
