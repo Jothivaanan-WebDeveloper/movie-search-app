@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function MovieCard({ movie }) {
-    // console.log("MOVIE", movie);
     return (
         <div className="flip-card cardDiv">
             <div className="flip-card-inner">
