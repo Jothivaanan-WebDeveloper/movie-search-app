@@ -39,10 +39,10 @@ function App() {
         <div className="d-flex justify-content-around" style={{ flexFlow: "wrap" }}>
        
           {
-            !movie.length ?
-            <fds-circular-progress indeterminate="true"></fds-circular-progress> :
             movie === undefined ?
              <NotFound /> :
+            !movie.length ?
+            <fds-circular-progress indeterminate="true"></fds-circular-progress> :
             movie.map((el) => {
               return <MovieCard movie={el} />
             })
